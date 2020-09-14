@@ -1,0 +1,39 @@
+h1 {
+  margin: .5rem 0;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 1rem 0;
+
+  app-movie {
+    transition: all .2s ease;
+  }
+
+  app-movie:first-child:hover {
+    padding-left: 1rem;
+  }
+}
+
+
+@media(min-width:768px) {
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    overflow: hidden;
+  }
+}
+
+@media(min-width:1024px) {
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    overflow: hidden;
+  }
+}

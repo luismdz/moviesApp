@@ -1,0 +1,76 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-beat"
+  [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div class="movie-container">
+
+  <button class="btn"
+    type="button"
+    (click)='goBack()'>
+    Back
+  </button>
+  <div class="content">
+
+    <div class="poster">
+      <img [src]="movie.Poster"
+        alt="">
+    </div>
+
+    <div class="info-content">
+
+      <h1>{{ movie.title }} <small>({{ movie.Year }})</small></h1>
+      <div class="top-info">
+        <span class="rated">
+          {{ movie.Rated }}
+        </span>
+        <small>
+          {{ movie.Released | date:'dd-MM-yyyy'}}
+        </small>
+        <small>
+          {{ movie.Runtime }}
+        </small>
+      </div>
+
+      <div class="extra-infos">
+        <small class="x-info">
+          Genres: {{ movie.Genre }}
+        </small>
+        <small class="x-info">
+          Cast: {{ movie.Actors }}
+        </small>
+        <small class="x-info">
+          Director: {{ movie.Director }}
+        </small>
+      </div>
+
+      <div class="overview">
+        <p class="tagline">
+          {{ movie.tagline }}
+        </p>
+
+        <h2>Overview</h2>
+
+        <p>{{ movie.Plot }}</p>
+      </div>
+
+      <div class="ratings"
+        *ngFor="let r of movie.ratings">
+        <p>
+          {{ r.Source }}: <span>{{ r.Value }}</span>
+        </p>
+      </div>
+
+      <p *ngIf="movie.ratings?.length <= 0"
+        class="ratings">
+        Will be released on: {{ movie.release_date | date:'dd-MM-yyyy'}}
+      </p>
+
+    </div>
+
+  </div>
+
+</div>

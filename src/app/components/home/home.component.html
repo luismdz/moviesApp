@@ -1,0 +1,48 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-beat"
+  [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div *ngIf="movies.searchedMovies.length < 1 else searched">
+  <h1>Popular Movies</h1>
+  <!-- <ngx-slick-carousel class="carousel"
+  [config]="slideConfig">
+  <app-movie ngxSlickItem
+    *ngFor="let movie of movies?.popular"
+    [movie]="movie"
+    class="slide">
+  </app-movie>
+</ngx-slick-carousel> -->
+  <div class="grid">
+    <app-movie *ngFor="let movie of movies?.popular"
+      [movie]="movie">
+    </app-movie>
+  </div>
+
+  <h1>Top Rated</h1>
+  <div class="grid">
+    <app-movie *ngFor="let movie of movies?.top_rated"
+      [movie]="movie"
+      class="slide">
+    </app-movie>
+  </div>
+
+  <h1>Upcomming</h1>
+  <div class="grid">
+    <app-movie *ngFor="let movie of movies?.upcomming"
+      [movie]="movie">
+    </app-movie>
+  </div>
+</div>
+
+<ng-template #searched>
+  <h1>Seaching for: <small>{{ movies.searchedMovies['qry'] }}</small> </h1>
+  <div class="grid">
+    <app-movie *ngFor="let movie of movies?.searchedMovies"
+      [movie]="movie">
+    </app-movie>
+  </div>
+</ng-template>

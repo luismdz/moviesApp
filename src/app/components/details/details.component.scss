@@ -1,0 +1,136 @@
+.movie-container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  .btn {
+    padding: 5px 10px;
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #333;
+      color: #f4f4f4;
+    }
+  }
+
+  h1,
+  h2 {
+    font-weight: 400;
+  }
+}
+
+.content {
+  height: 100%;
+
+  .poster {
+    margin: 1rem 0;
+    // width: 100%;
+  }
+
+  .info-content {
+    width: 100%;
+    height: 50%;
+    margin-top: .5rem;
+    display: flex;
+    flex-direction: column;
+
+    .rated {
+      font-size: 12px;
+      border: 1px solid #333;
+      padding: 2px 5px;
+      border-radius: 3px;
+      color: darkgray;
+      // margin-right: .75rem;
+    }
+
+    .top-info {
+      margin-top: .5rem;
+      margin-bottom: .25rem;
+      width: 170px;
+      display: flex;
+      justify-content: space-between;
+      color: darkgray
+    }
+
+    .extra-infos {
+      margin-top: .5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .25rem;
+
+      .x-info {
+        color: darkgray
+      }
+
+    }
+
+    .ratings {
+      color: darkgray;
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      span {
+        padding: 1px 5px;
+        margin-left: .5rem;
+        color: #f4f4f4;
+        background-color: #2d8cff;
+        font-size: 14px;
+        border-radius: 5px;
+      }
+    }
+
+    .overview {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+
+      .tagline {
+        color: darkgray;
+        font-weight: 300;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 20px;
+        font-weight: 700;
+        padding: .75rem 0;
+        border-bottom: 1px solid #333;
+      }
+
+      p {
+        font-weight: 400;
+        margin: 1rem 0;
+        width: 100%;
+        text-align: justify;
+      }
+    }
+  }
+}
+
+@media(min-width:768px) {
+
+  .movie-container {
+    width: 80%;
+  }
+
+  .content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .info-content {
+      margin-left: 2rem;
+      margin-right: 2rem;
+      width: 50%;
+    }
+  }
+}

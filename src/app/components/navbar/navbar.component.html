@@ -1,0 +1,14 @@
+<nav>
+  <div class="logo"
+    routerLink="home">
+    <span>MoviesApp</span>
+  </div>
+  <div class="search">
+    <input type="text"
+      class="search-input"
+      placeholder="Movie Title"
+      [(ngModel)]="input"
+      (input)="searchMovies()">
+    <i class="fas fa-search"></i>
+  </div>
+</nav>
